@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+body {
+    background: #6f6272;
+    color: black;
+    padding: 60px 80px;
+}
+
+/* General section spacing */
+.section {
+    margin-bottom: 100px;
+}
+
+/* Title */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Intro section */
+.intro-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.profile-img {
+    width: 420px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.intro-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    max-width: 380px;
+    line-height: 1.5;
+}
+
+/* Interests and hobbies */
+.desc {
+    max-width: 700px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.hobbies {
+    display: flex;
+    gap: 40px;
+}
+
+.hobby-card {
+    width: 260px;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+}
+
+/* History list */
+.history-list {
+    max-width: 800px;
+}
+
+.history-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.history-row span {
+    font-size: 20px;
+    font-weight: 600;
+}
