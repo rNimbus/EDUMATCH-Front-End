@@ -20,11 +20,46 @@
 			</main>
 
 			<nav class="footer-pills" aria-label="footer links">
-				<a href="#">Help</a>
-				<a href="about.html">About</a>
-				<a href="#">Contact</a>
+				<button class="pill-link" data-content="help">Help</button>
+				<button class="pill-link" data-content="about">About</button>
+				<button class="pill-link" data-content="contact">Contact</button>
 			</nav>
 
+<div class="popup-panel" id="popupPanel">
+    <div class="panel-content" id="panelContent"></div>
+</div>
+
 		</div>
+		<script>
+		const pills = document.querySelectorAll(".pill-link");
+		const panel = document.getElementById("popupPanel");
+		const content = document.getElementById("panelContent");
+
+		const messages = {
+			help: "This is the help section! Here you can find guidance on how to use EduMatch.",
+			about: "EduMatch helps students choose a suitable college path based on preferences and skills.",
+			contact: "You may contact us at: edumatch.support@gmail.com"
+		};
+
+		pills.forEach(btn => {
+			btn.addEventListener("click", () => {
+				const type = btn.dataset.content;
+				content.textContent = messages[type];
+				panel.classList.add("active");
+
+				// highlight clicked button
+				pills.forEach(p => p.classList.remove("active"));
+				btn.classList.add("active");
+			});
+		});
+
+		// Close the panel when clicking outside
+		document.addEventListener("click", (e) => {
+			if (!panel.contains(e.target) && !e.target.classList.contains("pill-link")) {
+				panel.classList.remove("active");
+				pills.forEach(p => p.classList.remove("active"));
+			}
+		});
+		</script>
 	</body>
 </html>

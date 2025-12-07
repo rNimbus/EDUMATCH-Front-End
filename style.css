@@ -73,25 +73,85 @@ html, body {
 }
 
 /* Footer pill nav centered at bottom */
-.footer-pills{
+.footer-pills {
 	position: absolute;
 	bottom: 28px;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
-	gap: 12px;
-	background: rgba(11,11,11,0.06);
-	padding: 8px;
-	border-radius: 24px;
+	justify-content: center;
+	gap: 20px;
+	background: rgba(0,0,0,0.15); /* better visible tint */
+	padding: 12px 18px;
+	border-radius: 30px;
 }
-.footer-pills a{
+
+.footer-pills a {
 	display: inline-block;
-	padding: 8px 20px;
+	padding: 10px 26px;
 	border-radius: 999px;
 	text-decoration: none;
-	color: #0b0b0b;
-	font-size: 14px;
-	background: transparent;
+	color: #000;
+	font-size: 15px;
+	background: #e6e6e6;  /* solid buttons */
+	border: 2px solid #00000044;
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Hover Effect */
+.footer-pills a:hover {
+	transform: scale(1.08);
+	background: #ffffff;
+}
+
+.pill-link {
+    background: #c9c8c8;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000;
+    border: 2px solid #00000044;
+    transition: transform .2s ease;
+}
+
+.pill-link:hover {
+    transform: scale(1.08);
+}
+
+/* ACTIVE EXPANDING EFFECT */
+.pill-link.active {
+    background: rgba(255,255,255,0.4);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.popup-panel {
+    position: fixed;
+    bottom: -500px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 700px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    transition: bottom 0.4s ease;
+    z-index: 100;
+    color: white;
+    min-height: 200px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+}
+
+.popup-panel.active {
+    bottom: 150px;
+}
+
+.panel-content {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 /* Small responsive tweaks */
