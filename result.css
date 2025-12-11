@@ -51,7 +51,12 @@ body {
     padding: 40px;
     border-radius: 25px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    display: flex;                  /* NEW */
+    justify-content: space-between; /* NEW */
+    align-items: center;            /* NEW */
 }
+
 
 /* Text */
 .result-container h2 {
@@ -64,17 +69,36 @@ body {
     margin-bottom: 25px;
 }
 
-/* Button */
-.explore-btn {
-    padding: 10px 22px;
-    background: #c7c3c8;
-    color: black;
-    font-size: 16px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 30px;
+/* LEFT TEXT CONTENT */
+.result-text {
+    flex: 1;
 }
+
+/* Chart box */
+.chart-box {
+    width: 260px;
+    height: 260px;
+    background: #c0bcc4;
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 180px;
+    height: 180px;
+    background: #734281;
+    border-radius: 50%;
+}
+.description {
+    margin-top: 20px;
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
 
 /* Chart box */
 .chart-box {
