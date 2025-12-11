@@ -36,15 +36,82 @@
 		const content = document.getElementById("panelContent");
 
 		const messages = {
-			help: "This is the help section! Here you can find guidance on how to use EduMatch.",
-			about: "EduMatch helps students choose a suitable college path based on preferences and skills.",
-			contact: "You may contact us at: edumatch.support@gmail.com"
+			help: `
+				<h2>How to Use EduMatch</h2>
+				<p>EduMatch helps you find the college program that best matches your interests and strengths.</p>
+
+				<h3>Steps:</h3>
+				<ul>
+					<li>Click "Start you're seeking"</li>
+					<li>Answer all questions honestly</li>
+					<li>Submit your responses</li>
+					<li>View your recommended program</li>
+				</ul>
+
+				<h3>Tips for Accurate Results:</h3>
+				<ul>
+					<li>Read the questions carefully</li>
+					<li>Do not skip items</li>
+					<li>Answer based on your real interests</li>
+				</ul>
+
+				<h3>Troubleshooting:</h3>
+				<ul>
+					<li>Check internet connection</li>
+					<li>Refresh the page</li>
+					<li>Ensure all questions are answered</li>
+				</ul>
+
+			`,
+
+			about: `
+				<h2>About EduMatch</h2>
+				<p>
+					EduMatch is a simple program-recommendation tool that helps SHS students
+					choose a college course that matches their interests and strengths.
+					It analyzes student responses and provides clear, personalized suggestions
+					to make decision-making easier and less confusing.
+				</p>
+
+				<h3>Why It Was Created</h3>
+				<p>
+					Many students struggle or feel unsure when choosing a course.  
+					The creators experienced the same difficulty, so they built EduMatch
+					to guide SHS learners toward options that may best fit their abilities.
+				</p>
+
+				<h3>Developers Behind EduMatch</h3>
+				<ul style="text-align:left; margin-top:10px;">
+					<li><strong>Diones, Prince Alexis</strong> – Data Analyst, Data Engineer, Researcher, Backend</li>
+					<li><strong>Gahuman, Reniel</strong> – UI/UX Designer, Researcher, Tester</li>
+					<li><strong>Romulo, Jon Andrei</strong> – Frontend, Researcher, Project Manager</li>
+				</ul>
+
+				<h3>What EduMatch Offers</h3>
+				<p>
+					• Personalized program recommendations  
+					• Simple and student-friendly interface  
+					• Helpful descriptions of suggested courses  
+				</p>
+
+				<h3>Who Is It For?</h3>
+				<p>
+					EduMatch is designed mainly for SHS students who want help choosing
+					the most suitable academic program and making confident decisions
+					about their future.
+				</p>
+			`,
+
+			contact: `
+				<h2>Contact</h2>
+				<p>You may contact us at: <strong>edumatch.support@gmail.com</strong></p>
+			`
 		};
 
 		pills.forEach(btn => {
 			btn.addEventListener("click", () => {
 				const type = btn.dataset.content;
-				content.textContent = messages[type];
+				content.innerHTML = messages[type];
 				panel.classList.add("active");
 
 				// highlight clicked button
@@ -60,6 +127,8 @@
 				pills.forEach(p => p.classList.remove("active"));
 			}
 		});
+
+		
 		</script>
 	</body>
 </html>
